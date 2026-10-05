@@ -1,0 +1,58 @@
+# Language and Git Attributes for AutoHedge
+# This file controls how GitHub classifies files in the AutoHedge repository
+
+# Python files
+*.py linguist-language=Python
+*.pyw linguist-language=Python
+
+# Configuration files
+*.hcl linguist-language=HCL
+*.env linguist-language=Bash
+*.env.* linguist-language=Bash
+
+# Vault and security-related
+vault.hcl linguist-language=HCL
+.env.vault.example linguist-language=Bash
+
+# Documentation
+docs/ linguist-documentation
+*.md linguist-documentation
+README.md linguist-documentation
+
+# Solana-related files (if using Rust for contracts)
+*.rs linguist-language=Rust
+
+# JSON configuration files
+*.json linguist-language=JSON
+pyproject.toml linguist-language=TOML
+requirements.txt linguist-language=Plaintext
+
+# Ignore vendored dependencies
+vendor/** linguist-vendored
+node_modules/** linguist-vendored
+.venv/** linguist-vendored
+venv/** linguist-vendored
+
+# Mark generated files
+generated/** linguist-generated=true
+dist/** linguist-generated=true
+build/** linguist-generated=true
+*.pyc linguist-generated=true
+
+# Test files (optional: exclude from language stats)
+**/tests/** linguist-detectable=true
+**/test_*.py linguist-detectable=true
+**/*_test.py linguist-detectable=true
+
+# Docker files
+Dockerfile linguist-language=Dockerfile
+docker-compose.yml linguist-language=YAML
+
+# GitHub Actions workflows
+.github/workflows/*.yml linguist-language=YAML
+
+# Ignore binary files
+*.pyc linguist-generated=true
+*.pyo linguist-generated=true
+*.egg-info/** linguist-generated=true
+__pycache__/** linguist-generated=true
